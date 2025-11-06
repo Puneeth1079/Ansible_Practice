@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import config from "./config.js";
 import "./stock.css";
 
 const EMPTY_STOCK = {
@@ -12,7 +11,7 @@ const EMPTY_STOCK = {
 };
 
 export default function StockTracker() {
-  const baseUrl = `${config.url}/stockapi`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/stockapi`;
 
   const [items, setItems] = useState([]);
   const [form, setForm] = useState({ ...EMPTY_STOCK });
